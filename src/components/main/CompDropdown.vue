@@ -1,6 +1,6 @@
 <script>
 export default{
-    name: "CompMain",
+    name: "CompDropdown.vue",
 }
 </script>
 
@@ -22,11 +22,17 @@ export default{
 
 
     <!-- carte -->
-    <main class="bg-light m-5">
-        <h1>ciao</h1>
+    <main class="bg-light m-5 p-2">
+    
+        <div >
+            <div class="bg-dark m-5 p-2 text-light">
+                <h2>Found...</h2>
+            </div>
+        </div>
+
     </main>
 </template>
 
 <style scoped>
-    
+
 </style>

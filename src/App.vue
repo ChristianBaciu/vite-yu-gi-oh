@@ -1,15 +1,16 @@
 <script>
     import CompHeader from './components/header/CompHeader.vue'
-    import CompMain from './components/main/CompMain.vue'
+    import CompDropdown from './components/main/CompDropdown.vue'
+    import CompCard from './components/main/CompCard.vue'
 
     import {store} from './store'
     import axios from 'axios'
 
-
     export default{
         components:{
             CompHeader,
-            CompMain,
+            CompDropdown,
+            CompCard,
         },
         data(){
             return{
@@ -17,13 +18,14 @@
             }
         },
         methods:{
-            getMonster(){    // apiUrl l'abbiamo preso dallo store.js
+            getMonster(){    // apiUrl nel store.js
                 axios.get(store.apiUrl).then(res =>{
                     console.log(res.data)
-
                     // per inserire nell'array l'oggetto
-                    store.monsterCard = res.data
+                    store.monsterCard = res.data.data
 
+                    store.loading = true
+                    store.loading = false
                 })
             }
         },
@@ -40,7 +42,11 @@
     <CompHeader/>
 
     <main>
-        <CompMain/>
+        <div v-if="(store.loading)" class="spinner-border text-primary" role="status">
+            <span class="visually-hidden">Loading...</span>
+        </div>
+        <CompDropdown/>
+        
     </main>
 
 </template>
