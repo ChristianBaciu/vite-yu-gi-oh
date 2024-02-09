@@ -1,11 +1,52 @@
-<script setup>
+<script>
+    import CompHeader from './components/header/CompHeader.vue'
+    import CompMain from './components/main/CompMain.vue'
 
+    import {store} from './store'
+    import axios from 'axios'
+
+
+    export default{
+        components:{
+            CompHeader,
+            CompMain,
+        },
+        data(){
+            return{
+                store,
+            }
+        },
+        methods:{
+            getMonster(){    // apiUrl l'abbiamo preso dallo store.js
+                axios.get(store.apiUrl).then(res =>{
+                    console.log(res.data)
+
+                    // per inserire nell'array l'oggetto
+                    store.monsterCard = res.data
+
+                })
+            }
+        },
+        mounted(){
+            this.getMonster()
+        }
+    }
 </script>
 
+<!-- ------------------------------------------------------------------------------ -->
+
 <template>
-    <h1>ciao</h1>
+
+    <CompHeader/>
+
+    <main>
+        <CompMain/>
+    </main>
+
 </template>
 
-<style scoped>
+<!-- ------------------------------------------------------------------------------ -->
+
+<style lang="scss" scoped>
 
 </style>

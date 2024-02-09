@@ -1,2 +1,9 @@
+// variabile per scss
+@use './partials/variables' as *;
+
 // Import all of Bootstrap's CSS
 @import "bootstrap/scss/bootstrap";
+
+body{
+    background-color: $bg-page;
+}
