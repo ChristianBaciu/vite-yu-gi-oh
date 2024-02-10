@@ -7,7 +7,7 @@ export default {
 <!-- ------------------------------------------------------------------ -->
 
 <template>
-    <header class="ms-5 mt-5">
+    <header class="ms-5 mt-4">
         <div class="dropdown">
             <button class="btn btn-light dropdown-toggle text-center" type="button" data-bs-toggle="dropdown" aria-expanded="false">
                 Scegli

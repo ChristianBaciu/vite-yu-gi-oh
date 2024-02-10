@@ -18,11 +18,22 @@ export default {
 <!-- ------------------------------------------------------------------ -->
 
 <template>
-<CompCard v-for="(element, index) in store.monsterCard" :key="index" :monsterData="element" />
+    <div class="bg-light m-4 p-5">
+        <div class="bg-dark text-light p-4 ">
+            <h3>Found 20 cards</h3>
+        </div>
+        <div class="containerMonster">
+            <CompCard v-for="(monster, index) in store.monsterCard" :key="index" :monsterData="monster" />
+        </div>
+    </div>
 </template>
 
 <!-- ------------------------------------------------------------------ -->
 
 <style scoped>
-
+.containerMonster{
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 auto;
+}
 </style>
