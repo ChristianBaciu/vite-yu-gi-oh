@@ -1,6 +1,6 @@
 <script>
 export default{
-    name: "CompCard",
+    name: "CompList",
 }
 </script>
 
@@ -8,7 +8,7 @@ export default{
 
 <template>
 
-<h1>ciao CompCard</h1>
+<h1>ciao CompList</h1>
 
 </template>
 
@@ -16,6 +16,6 @@ export default{
 
 <style scoped>
     h1{
-        color: green;
+        color: blue;
     }
 </style>
