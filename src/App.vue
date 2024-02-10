@@ -7,7 +7,7 @@ import CompCard from './components/main/CompCard.vue'
 import {store} from './store'
 import axios from 'axios'
 
-export default{
+export default {
     components:{
         CompHeader,
         CompDropdown,
@@ -20,13 +20,13 @@ export default{
         }
     },
     methods:{
-        getMonster(){    // apiUrl nel store.js
-            axios.get(store.apiUrl).then(res =>{
-                console.log(res.data)
-                // per inserire nell'array l'oggetto
-                store.monsterCard = res.data.data
-                store.loading = true
-                store.loading = false
+        getMonster(){
+            axios.get(store.apiUrl).then(response =>{
+                console.log(response.data.data)
+
+                store.monsterCard = response.data.data
+                // store.loading = true
+                // store.loading = false
             })
         }
     },
@@ -41,14 +41,13 @@ export default{
 <template>
     <header>
         <CompHeader/>
-        <div v-if="(store.loading)" class="spinner-border text-primary" role="status">
+        <!-- <div v-if="(store.loading)" class="spinner-border text-primary" role="status">
             <span class="visually-hidden">Loading...</span>
-        </div>
+        </div> -->
         <CompDropdown/>
     </header>
 
     <main>
-        <CompCard/>
         <CompList/>
     </main>
 </template>

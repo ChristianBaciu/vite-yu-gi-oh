@@ -1,21 +1,25 @@
 <script>
-export default{
+export default {
     name: "CompCard",
+    props: [
+        'monsterData'
+    ],
+    data(){
+        return {}
+    }
 }
 </script>
 
 <!-- ------------------------------------------------------------------ -->
 
 <template>
-
-<h1>ciao CompCard</h1>
-
+    <div>
+        <h1>{{ monsterData.name }}</h1>
+        <!-- Altri elementi del componente CompCard che utilizzano monsterData -->
+    </div>
 </template>
-
 <!-- ------------------------------------------------------------------ -->
 
 <style scoped>
-    h1{
-        color: green;
-    }
+
 </style>

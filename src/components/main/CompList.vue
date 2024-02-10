@@ -1,21 +1,28 @@
 <script>
-export default{
+import CompCard from './CompCard.vue'
+import {store} from '../../store'
+
+export default {
     name: "CompList",
+    components:{
+        CompCard
+    },
+    data(){
+        return{
+            store
+        }
+    }
 }
 </script>
 
 <!-- ------------------------------------------------------------------ -->
 
 <template>
-
-<h1>ciao CompList</h1>
-
+<CompCard v-for="(element, index) in store.monsterCard" :key="index" :monsterData="element" />
 </template>
 
 <!-- ------------------------------------------------------------------ -->
 
 <style scoped>
-    h1{
-        color: blue;
-    }
+
 </style>
