@@ -13,10 +13,10 @@ export default {
 <!-- ------------------------------------------------------------------ -->
 
 <template> 
-    <div class="containerList">
+    <div class="containerList d-flex p-2">
         <div class="bgColor">
             <figure>
-                <img :src="monsterData.card_images[0].image_url" alt="" style="width: 100%;">
+                <img :src="monsterData.card_images[0].image_url" alt="img" style="width: 100%;">
             </figure>
             <h6 class="text-center text-light">{{ monsterData.name }}</h6>
             <p class="text-center">{{ monsterData.archetype }}</p>
@@ -28,8 +28,6 @@ export default {
 <style scoped>
     .containerList{
         width: calc(100% / 5);
-        display: flex;
-        flex-direction: column;
         
         .bgColor{
             background-color: #d48f38;

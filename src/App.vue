@@ -25,8 +25,8 @@ export default {
                 console.log(response.data.data)
 
                 store.monsterCard = response.data.data
-                // store.loading = true
-                // store.loading = false
+                store.loading = true
+                store.loading = false
             })
         }
     },
@@ -41,10 +41,12 @@ export default {
 <template>
     <header>
         <CompHeader/>
-        <!-- <div v-if="(store.loading)" class="spinner-border text-primary" role="status">
-            <span class="visually-hidden">Loading...</span>
-        </div> -->
         <CompDropdown/>
+        <div class="d-flex justify-content-center">
+            <div v-if="(store.loading)" class="spinner-border" role="status">
+                <span class="visually-hidden">Loading...</span>
+            </div>
+        </div>
     </header>
 
     <main>

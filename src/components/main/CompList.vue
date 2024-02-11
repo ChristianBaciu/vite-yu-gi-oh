@@ -22,7 +22,7 @@ export default {
         <div class="bg-dark text-light p-4 ">
             <h3>Found 20 cards</h3>
         </div>
-        <div class="containerMonster">
+        <div class="containerMonster d-flex flex-wrap mx-auto">
             <CompCard v-for="(monster, index) in store.monsterCard" :key="index" :monsterData="monster" />
         </div>
     </div>
@@ -31,9 +31,5 @@ export default {
 <!-- ------------------------------------------------------------------ -->
 
 <style scoped>
-.containerMonster{
-    display: flex;
-    flex-wrap: wrap;
-    margin: 0 auto;
-}
+
 </style>
