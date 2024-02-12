@@ -21,17 +21,28 @@ export default {
     },
     methods:{
         getMonster(){
-            axios.get(store.apiUrl).then(response =>{
+            axios.get(store.monsterArryApiUrl).then(response =>{
                 console.log(response.data.data)
 
-                store.monsterCard = response.data.data
+                store.monsterArry = response.data.data
+                // caricamento pagina
                 store.loading = true
                 store.loading = false
             })
-        }
+        },
+
+        getArchetype(){
+            axios.get(store.archetypeApiUrl).then(response =>{
+                console.log(response.data)
+
+                store.archetypeApiUrl = response.data
+            })
+        },
+
     },
     mounted(){
         this.getMonster()
+        this.getArchetype()
     }
 }
 </script>
@@ -41,7 +52,9 @@ export default {
 <template>
     <header>
         <CompHeader/>
-        <CompDropdown/>
+
+        <CompDropdown/> <!-- figlio @emitMonster="getMonster" -->
+
         <div class="d-flex justify-content-center">
             <div v-if="(store.loading)" class="spinner-border" role="status">
                 <span class="visually-hidden">Loading...</span>

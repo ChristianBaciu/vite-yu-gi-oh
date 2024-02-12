@@ -20,10 +20,10 @@ export default {
 <template>
     <div class="bg-light m-4 p-5">
         <div class="bg-dark text-light p-3">
-            <h3>Found {{ store.monsterCard.length }} cards</h3> <!-- store.monsterCard.length scrive quante carte ci sono in tutto -->
+            <h3>Found {{ store.monsterArry.length }} cards</h3> <!-- store.monsterArry.length scrive quante carte ci sono in tutto -->
         </div>
         <div class="containerMonster d-flex flex-wrap mx-auto">
-            <CompCard v-for="(monster, index) in store.monsterCard" :key="index" :monsterData="monster" />
+            <CompCard v-for="(monster, index) in store.monsterArry" :key="index" :monsterData="monster" />
         </div>
     </div>
 </template>

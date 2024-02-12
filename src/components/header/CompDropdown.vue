@@ -1,6 +1,13 @@
 <script>
+import {store} from '../../store'
+
 export default {
     name: "CompDropdown.vue",
+    data(){
+        return{
+            store
+        }
+    }
 }
 </script>
 
@@ -8,16 +15,14 @@ export default {
 
 <template>
     <header class="ms-5 mt-4">
-        <div class="dropdown">
-            <button class="btn btn-light dropdown-toggle text-center" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                Scegli
-            </button>
-            <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="#">...</a></li>
-                <li><a class="dropdown-item" href="#">...</a></li>
-                <li><a class="dropdown-item" href="#">...</a></li>
-            </ul>
-        </div>
+
+
+        <select class="from-select form-select-lg" v-model="store.selectValue">
+
+            <option :value="element.archetype_name" v-for="(element, index) in store.archetypeApiUrl" key="index">{{ element.archetype_name }}</option>
+
+        </select>
+        
     </header>
 </template>
 
@@ -25,11 +30,8 @@ export default {
 
 <style scoped>
     header{
-        .dropdown{
-
-            button{
-                width: 160px;
-            }
+        select{
+            width: 320px;
         }
     }
 </style>
