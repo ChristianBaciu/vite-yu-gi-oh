@@ -21,6 +21,9 @@ export default {
     },
     methods:{
         getMonster(){
+
+
+
             axios.get(store.monsterArryApiUrl).then(response =>{
                 console.log(response.data.data)
 
@@ -28,6 +31,13 @@ export default {
                 // caricamento pagina
                 store.loading = true
                 store.loading = false
+
+                
+                if(store.selectValue){
+                    store.monsterArryApiUrl += `&archetypeApiUrl${store.selectValue}`
+                }
+
+
             })
         },
 
@@ -53,7 +63,7 @@ export default {
     <header>
         <CompHeader/>
 
-        <CompDropdown/> <!-- figlio @emitMonster="getMonster" -->
+        <CompDropdown @emitMonster="getMonster"/> <!-- figlio  -->
 
         <div class="d-flex justify-content-center">
             <div v-if="(store.loading)" class="spinner-border" role="status">

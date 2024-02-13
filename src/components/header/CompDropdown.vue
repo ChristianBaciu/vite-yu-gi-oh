@@ -17,7 +17,7 @@ export default {
     <header class="ms-5 mt-4">
 
 
-        <select class="from-select form-select-lg" v-model="store.selectValue">
+        <select class="from-select form-select-lg" v-model="store.selectValue" @change="$emit('emitMonster')">
 
             <option :value="element.archetype_name" v-for="(element, index) in store.archetypeApiUrl" key="index">{{ element.archetype_name }}</option>
 
