@@ -21,9 +21,6 @@ export default {
     },
     methods:{
         getMonster(){
-
-
-
             axios.get(store.monsterArryApiUrl).then(response =>{
                 console.log(response.data.data)
 
@@ -32,9 +29,8 @@ export default {
                 store.loading = true
                 store.loading = false
 
-                
                 if(store.selectValue){
-                    store.monsterArryApiUrl += `&archetypeApiUrl${store.selectValue}`
+                    store.monsterArryApiUrl += `&archetype=${store.selectValue}`
                 }
 
 
